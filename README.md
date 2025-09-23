@@ -1,25 +1,93 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>تطبيق حساب الخشب — كامل</title>
-
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bottom Navigation Bar</title>
   <style>
-    :root{
-      --bg:#f5f7fa; --card:#fff; --accent:#2e8b57; --text:#222;
-      --muted:#6b6b6b;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
     }
-    [data-theme="dark"]{
-      --bg:#0f1720; --card:#0b1520; --accent:#36d399; --text:#e6eef6; --muted:#9aa4af;
+
+    /* شريط السفلي */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: #fff;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 15px 15px 0 0;
     }
-    body { margin:0; font-family: "Segoe UI", Tahoma, system-ui; background:var(--bg); color:var(--text); }
-    .app { min-height:100vh; padding-bottom:80px; box-sizing:border-box; }
-    header { padding:12px 16px; display:flex; align-items:center; gap:12px; }
-    header img.logo { width:44px; height:44px; border-radius:8px; }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #555;
+      font-size: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-item i {
+      font-size: 24px;
+      margin-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+
+    /* الأيقونة المفعلة */
+    .nav-item.active {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .nav-item.active i {
+      background: #007bff;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      transform: scale(1.1);
+    }
+
+    /* تأثير عند المرور */
+    .nav-item:hover {
+      color: #007bff;
+    }
+  </style>
+  <!-- أيقونات Font Awesome -->
+  <script src="https://kit.fontawesome.com/3d9f77e1f6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- شريط التنقل السفلي -->
+  <div class="bottom-nav">
+    <a href="#" class="nav-item">
+      <i class="fas fa-cog"></i>
+      <span>Settings</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-tools"></i>
+      <span>Tools</span>
+    </a>
+    <a href="#" class="nav-item active">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-chart-bar"></i>
+      <span>Stats</span>
+    </a>
+  </div>
+
+</body>
+</html>    header img.logo { width:44px; height:44px; border-radius:8px; }
     header h1 { font-size:18px; margin:0; }
 
     /* Pages */
